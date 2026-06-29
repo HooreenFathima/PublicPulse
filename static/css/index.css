@@ -1,0 +1,57 @@
+/* Background Image */
+
+body{
+margin:0;
+padding:0;
+height:100vh;
+
+background-image: url("/static/css/background.png");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+
+font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Navbar */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:30px 60px;
+}
+
+/* Title */
+
+.logo{
+font-size:36px;
+color:white;
+font-weight:bold;
+}
+
+/* Login & Register Buttons */
+
+.nav-buttons a{
+text-decoration:none;
+color:white;
+background-color:#007BFF;
+padding:10px 25px;
+margin-left:15px;
+border-radius:6px;
+font-size:16px;
+transition:0.3s;
+}
+
+/* keep blue after clicking */
+
+.nav-buttons a:visited{
+color:white;
+background-color:#007BFF;
+}
+
+/* hover effect */
+
+.nav-buttons a:hover{
+background-color:#0056b3;
+}

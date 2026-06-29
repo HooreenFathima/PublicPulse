@@ -1,0 +1,148 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Register</title>
+
+<style>
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Background with YOUR image */
+body {
+    height: 100vh;
+
+    background: url("{{ url_for('static', filename='images/image2.png') }}") no-repeat center center/cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Dark overlay */
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+}
+
+/* Transparent glass container */
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    padding: 40px 30px;
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    z-index: 1;
+}
+
+/* Titles */
+.container h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 13px;
+    margin-bottom: 5px;
+    color: #eee;
+}
+
+/* Inputs */
+input {
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.3);
+    color: #fff;
+    outline: none;
+}
+
+input::placeholder {
+    color: #eee;
+}
+
+/* Button */
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: #f4c542;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Bottom text */
+p {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+}
+
+p a {
+    text-decoration: none;
+    color: #f4c542;
+    font-weight: 600;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>User Registration</h1>
+
+    <form method="POST" action="/register">
+
+        <label>Username</label>
+        <input type="text" name="username" placeholder="Enter Username" required>
+
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Enter Email" required>
+
+        <label>Mobile</label>
+        <input type="text" name="mobile" placeholder="Enter Mobile Number" required>
+
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Enter Password" required>
+
+        <button type="submit">Register</button>
+
+    </form>
+
+    <p>Already have an account?  
+    <a href="/user_login">Login</a></p>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prediction Result</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+font-family:'Segoe UI',sans-serif;
+
+/* add your image1 here */
+background: url("/static/result1.png") no-repeat center center/cover;
+
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* result container */
+.result-box{
+background: rgba(5,5,30,0.6);
+backdrop-filter: blur(18px);
+border-radius:20px;
+padding:50px;
+width:420px;
+text-align:center;
+
+border:1px solid rgba(255,255,255,0.2);
+box-shadow:0 0 40px rgba(140,0,255,0.3);
+}
+
+/* heading */
+h1{
+color:#ffffff;
+margin-bottom:20px;
+}
+
+/* result text */
+.result{
+font-size:30px;
+font-weight:bold;
+margin:20px 0;
+}
+
+/* positive style */
+.positive{
+color:#00ffcc;
+text-shadow:0 0 15px #00ffcc;
+}
+
+/* negative style */
+.negative{
+color:#ff4d6d;
+text-shadow:0 0 15px #ff4d6d;
+}
+
+/* neutral style */
+.neutral{
+color:#ffd166; /* visible golden color */
+text-shadow:0 0 15px #ffd166;
+}
+
+/* button */
+a{
+display:inline-block;
+margin-top:20px;
+padding:10px 25px;
+border-radius:10px;
+text-decoration:none;
+
+background: linear-gradient(135deg,#8a2be2,#00c6ff);
+color:white;
+transition:0.3s;
+}
+
+a:hover{
+transform:scale(1.05);
+box-shadow:0 0 15px #8a2be2;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="result-box">
+
+<h1>Prediction Result</h1>
+
+<!-- Make sure backend sends: positive / negative / neutral -->
+<div class="result {{ result|lower }}">
+{{ result }}
+</div>
+
+<a href="{{url_for('user_dashboard')}}">Go Back</a>
+
+</div>
+
+</body>
+</html>

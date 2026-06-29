@@ -1,0 +1,132 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Full screen gradient background (matching project colors) */
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card container */
+.login-card {
+    background: rgba(30, 30, 30, 0.95);
+    padding: 50px 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    width: 350px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+/* Title */
+.login-card h1 {
+    margin-bottom: 30px;
+    font-size: 2em;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+/* Floating input fields */
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 10px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #aaa;
+    color: #e0e0ff; /* visible text */
+    font-size: 1em;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Placeholder text */
+.input-group input::placeholder {
+    color: #bbb;
+}
+
+/* Fix Chrome autofill blue issue */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-text-fill-color: #e0e0ff !important; /* input text color */
+    -webkit-box-shadow: 0 0 0px 1000px rgba(30,30,30,0.95) inset !important; /* dark background */
+    transition: background-color 5000s ease-in-out 0s; /* prevents color flash */
+}
+
+/* Labels */
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #ccc;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+/* Move label up when input focused */
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: -10px;
+    font-size: 0.8em;
+    color: #6a11cb; /* project primary purple */
+}
+
+/* Underline glow on focus */
+.input-group input:focus {
+    border-bottom-color: #2575fc; /* project secondary blue */
+    box-shadow: 0 2px 5px #2575fc66;
+}
+
+/* Button using project gradient colors */
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: #fff;
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px #2575fc55;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #2575fc, #6a11cb);
+    box-shadow: 0 5px 25px #2575fc88;
+    transform: translateY(-2px);
+}
+
+/* Note below form */
+.note {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #ddd;
+}
+
+.note a {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.note a:hover {
+    color: #6a11cb;
+}

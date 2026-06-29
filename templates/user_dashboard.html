@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>User Dashboard</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+font-family:'Segoe UI',sans-serif;
+
+/* fixed background */
+background-image: url("/static/userdashboard1.png");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* optional dark overlay for better readability */
+body::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background: rgba(0,0,0,0.4);
+z-index:0;
+}
+
+/* main glass container */
+.dashboard-box{
+position:relative;
+z-index:1;
+
+background: rgba(10,20,60,0.6);
+backdrop-filter: blur(20px);
+border-radius:20px;
+padding:50px;
+width:420px;
+text-align:center;
+
+/* glowing border */
+border:1px solid rgba(0,255,255,0.3);
+box-shadow:0 0 40px rgba(0,200,255,0.2);
+}
+
+/* heading */
+h1{
+color:#00eaff;
+margin-bottom:10px;
+letter-spacing:1px;
+}
+
+/* sub text */
+h3{
+color:#cfd8ff;
+font-weight:normal;
+margin-bottom:25px;
+}
+
+/* input */
+input{
+width:100%;
+padding:12px;
+border-radius:10px;
+border:none;
+outline:none;
+font-size:15px;
+
+background: rgba(255,255,255,0.1);
+color:white;
+border:1px solid rgba(255,255,255,0.2);
+}
+
+input::placeholder{
+color:#ccc;
+}
+
+/* button */
+button{
+margin-top:20px;
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;
+
+background: linear-gradient(135deg,#00eaff,#0066ff);
+color:white;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px #00eaff;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="dashboard-box">
+
+<h1>User Dashboard</h1>
+<h3>Enter Government Scheme / Reaction</h3>
+
+<form action="/predict" method="post">
+<input type="text" name="scheme" placeholder="Enter scheme reaction" required>
+<button type="submit">Predict Reaction</button>
+</form>
+
+</div>
+
+</body>
+</html>

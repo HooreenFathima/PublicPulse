@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login As</title>
+  <style>
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+
+      background:
+        linear-gradient(rgba(2, 6, 23, 0.7), rgba(2, 6, 23, 0.7)),
+        url('/static/images/power.png');
+
+      background-size: cover;
+      background-position: center;
+    }
+
+    .container {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 60px;
+      color: #e2e8f0;
+    }
+
+    .login-options {
+      display: flex;
+      gap: 60px;
+    }
+
+    /* 🔥 TRANSPARENT GLASS CARDS */
+    .login-card {
+      width: 320px;
+      border-radius: 25px;
+      padding: 30px 25px;
+
+      /* 👇 glass effect */
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+
+      border: 1px solid rgba(255,255,255,0.2);
+
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+
+      transition: 0.4s;
+    }
+
+    .login-card:hover {
+      transform: translateY(-12px) scale(1.03);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    }
+
+    /* ROUND IMAGE */
+    .card-image {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center top;
+      margin: 0 auto 20px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+
+    .user-img {
+      background-image: url('/static/images/user.png');
+    }
+
+    .admin-img {
+      background-image: url('/static/images/admin1.png');
+    }
+
+    .login-card h2 {
+      font-size: 26px;
+      margin: 10px 0;
+    }
+
+    .login-card p {
+      font-size: 14px;
+      color: #cbd5e1;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 35px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+      font-size: 15px;
+    }
+
+    .user-btn {
+      background: linear-gradient(135deg, #3ddcff, #1e90ff);
+      box-shadow: 0 0 15px #3ddcff;
+      color: #fff;
+    }
+
+    .admin-btn {
+      background: linear-gradient(135deg, #ff9a3c, #ff5f2e);
+      box-shadow: 0 0 15px #ff9a3c;
+      color: #fff;
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 25px #fff;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Login As</h1>
+
+    <div class="login-options">
+
+      <div class="login-card">
+        <div class="card-image user-img"></div>
+        <h2>User Login</h2>
+        <p>Access as a regular user</p>
+        <a href="/user_login" class="btn user-btn">Select User</a>
+      </div>
+
+      <div class="login-card">
+        <div class="card-image admin-img"></div>
+        <h2>Admin Login</h2>
+        <p>Access as an administrator</p>
+        <a href="/admin_login" class="btn admin-btn">Select Admin</a>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

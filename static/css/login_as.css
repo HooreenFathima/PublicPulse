@@ -1,0 +1,90 @@
+body{
+margin:0;
+padding:0;
+font-family:Arial, Helvetica, sans-serif;
+
+background: linear-gradient(135deg,#0f4c81,#4fa3ff);
+
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* Bigger Card */
+
+.container{
+background:white;
+
+padding:60px;
+
+border-radius:12px;
+
+text-align:center;
+
+width:420px;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Title */
+
+.container h1{
+color:#0f4c81;
+
+font-size:32px;
+
+margin-bottom:40px;
+}
+
+/* Buttons layout */
+
+.login-options{
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+}
+
+/* Buttons */
+
+.user-btn,.admin-btn{
+
+text-decoration:none;
+
+padding:16px;
+
+font-size:18px;
+
+color:white;
+
+border-radius:8px;
+
+transition:0.3s;
+}
+
+/* User button */
+
+.user-btn{
+background:#1e88e5;
+}
+
+/* Admin button */
+
+.admin-btn{
+background:#0f4c81;
+}
+
+/* Hover */
+
+.user-btn:hover{
+background:#1565c0;
+transform:scale(1.05);
+}
+
+.admin-btn:hover{
+background:#08325f;
+transform:scale(1.05);
+}

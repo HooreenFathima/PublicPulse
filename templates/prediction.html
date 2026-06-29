@@ -1,0 +1,9 @@
+<form action="/predict" method="POST">
+    Enter Scheme Name:
+    <input type="text" name="scheme">
+    <button type="submit">Submit</button>
+</form>
+
+{% if result %}
+<h3>Reaction: {{ result }}</h3>
+{% endif %}

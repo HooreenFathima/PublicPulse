@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Dashboard</title>
+
+<style>
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+/* BODY WITH LIGHTER OVERLAY */
+body{
+    height:100vh;
+
+    /* 🔥 less dark overlay */
+    background:
+        linear-gradient(rgba(10,15,28,0.6), rgba(10,15,28,0.6)),
+        url("{{ url_for('static', filename='images/parliament.png') }}");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color:white;
+    display:flex;
+    flex-direction:column;
+}
+
+/* NAVBAR */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+
+    /* glass navbar */
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(8px);
+}
+
+.navbar h1{
+    color:#00f0ff;
+    text-shadow:0 0 10px #00f0ff;
+}
+
+.navbar a{
+    text-decoration:none;
+    color:white;
+    background:#ff003c;
+    padding:10px 20px;
+    border-radius:6px;
+}
+
+/* MAIN */
+.main{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* MODULES */
+.modules{
+    display:flex;
+    gap:50px;
+}
+
+/* 🔥 TRANSPARENT GLASS CARD */
+.card{
+    width:260px;
+    height:260px;
+
+    /* glass effect */
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+
+    border-radius:15px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+    color:white;
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+
+    transition:0.3s;
+}
+
+/* IMAGE */
+.card img{
+    width:100px;
+    height:100px;
+    object-fit:cover;
+    margin-bottom:15px;
+    border-radius:10px;
+}
+
+/* TEXT */
+.card h2{
+    font-size:20px;
+}
+
+/* HOVER */
+.card:hover{
+    transform:translateY(-10px) scale(1.05);
+    background: rgba(255,255,255,0.15);
+}
+
+/* SECOND CARD */
+.card.admin:hover{
+    background: rgba(255,122,0,0.2);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h1>⚡ Admin Panel</h1>
+    <a href="/">Logout</a>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+    <div class="modules">
+
+        <a href="/authorize_users" class="card">
+            <img src="{{ url_for('static', filename='image.png') }}">
+            <h2>Authorize Users</h2>
+        </a>
+
+        <a href="/view_graphs" class="card admin">
+            <img src="{{ url_for('static', filename='Graph_20Picture.jpg') }}">
+            <h2>View Graphs</h2>
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

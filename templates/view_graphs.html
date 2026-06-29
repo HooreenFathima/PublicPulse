@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sentiment Graph</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            
+            /* Attractive gradient background */
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+        }
+
+        .container {
+            margin-top: 50px;
+            padding: 30px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .graph-box {
+            display: inline-block;
+            padding: 25px;
+            
+            /* White card background for contrast */
+            background-color: #ffffff;
+            
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+
+            /* Prevent cropping feel */
+            padding: 15px;
+
+            background-color: #f9fafc;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Sentiment Distribution</h2>
+
+    <div class="graph-box">
+        <img src="{{ url_for('static', filename='css/datasetoverview.jpg') }}" 
+             alt="Sentiment Chart">
+    </div>
+</div>
+
+</body>
+</html>
